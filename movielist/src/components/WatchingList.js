@@ -5,7 +5,7 @@ import MovieItem from './MovieItem';
 
 const WatchingList = (props) => {
 
-    const watchinglist = watchedlist.filter((movie) => movie.name.toLowerCase().includes(props.query)).map((watched) =>
+    const watchinglist = watchedlist.filter((movie) => movie.name.toLowerCase().includes(props.movie)).map((watched) =>
 
         <div className="wlist">
             <h4 className="wcontainer">

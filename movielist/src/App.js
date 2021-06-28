@@ -1,6 +1,7 @@
 import './App.css';
 import { Title } from './components/styles';
-import SearchBar from './components/SearchBar';
+import SearchBarl from './components/SearchBarl';
+import SearchBarw from './components/SearchBarw'
 import { useState } from 'react';
 
 //////////////// *****************************
@@ -14,6 +15,7 @@ import WatchingList from './components/WatchingList';
 function App() {
 
   const [query, setQuery] = useState("");
+  const [movie, setMovie] = useState("");
 
   return (
 
@@ -22,16 +24,17 @@ function App() {
       <div class="column">
         <div className="watchlist-section">
           <Title> Watchlist </Title>
-          <SearchBar setQuery={setQuery} />
+          <SearchBarl setQuery={setQuery} />
           <MovieList movies={movies} query={query} />
+
         </div>
       </div>
 
       <div class="column">
         <div className="watched-section">
           <Title> Watched </Title>
-          <SearchBar setQuery={setQuery} />
-          <WatchingList query={query} />
+          <SearchBarw setMovie={setMovie} />
+          <WatchingList movie={movie} />
         </div>
       </div>
 
