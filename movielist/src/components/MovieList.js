@@ -7,7 +7,7 @@ import MovieItem from './MovieItem';
 
 const MovieList = (props) => {
 
-    const movieList = movies.filter((movie) => movie.name.toLowerCase().includes(props.query)).map((movie) =>
+    const movieList = props.movies.filter((movie) => movie.name.toLowerCase().includes(props.query)).map((movie) =>
         <div className="list">
             <h4 className="container">
                 <MovieItem movieName={movie.name} />

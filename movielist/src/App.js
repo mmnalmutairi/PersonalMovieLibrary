@@ -1,21 +1,31 @@
 import './App.css';
-import { Title } from './components/styles';
+import { Title, RiVideoAddLineStyled } from './components/styles';
 import SearchBarl from './components/SearchBarl';
 import SearchBarw from './components/SearchBarw'
 import { useState } from 'react';
+import { observer } from 'mobx-react';
 
 //////////////// *****************************
 import MovieList from './components/MovieList';
 
-import movies from './components/Movies';
+import movielibrary from './components/MovieLibrary';
 
 import WatchingList from './components/WatchingList';
+import MovieModal from './components/modals/MovieModal';
 
 
 function App() {
 
   const [query, setQuery] = useState("");
   const [movie, setMovie] = useState("");
+
+
+
+  const [isOpen, setIsOpen] = useState("");
+
+  const openModal = () => setIsOpen(true);
+  const closeModal = () => setIsOpen(false);
+
 
   return (
 
@@ -25,7 +35,9 @@ function App() {
         <div className="watchlist-section">
           <Title> Watchlist </Title>
           <SearchBarl setQuery={setQuery} />
-          <MovieList movies={movies} query={query} />
+          < RiVideoAddLineStyled size="3em" onClick={openModal} />
+          <MovieModal isOpen={isOpen} closeModal={closeModal} />
+          <MovieList movies={movielibrary.movies} query={query} />
 
         </div>
       </div>
@@ -43,4 +55,4 @@ function App() {
 }
 
 
-export default App;
+export default observer(App);

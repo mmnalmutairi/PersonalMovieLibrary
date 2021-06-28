@@ -2,6 +2,7 @@ import DeleteButton from './Buttons/DeleteButton';
 import UnWatchedButton from './Buttons/UnWatchedButton';
 import watchedlist from './WatchedList';
 import MovieItem from './MovieItem';
+import { observer } from 'mobx-react';
 
 const WatchingList = (props) => {
 
@@ -30,4 +31,4 @@ const WatchingList = (props) => {
     );
 }
 
-export default WatchingList;
+export default observer(WatchingList);

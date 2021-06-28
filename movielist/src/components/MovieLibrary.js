@@ -18,9 +18,17 @@ class MovieLibrary {
 
 
 
-    addMovie = () => {
+    addMovie = (newMovie) => {
+        newMovie.id = this.movies.length + 1;
+        this.movies.push(newMovie);
 
     }
+
+    changeWached = () => {
+
+
+    }
+
 }
 
 const movielibrary = new MovieLibrary();
