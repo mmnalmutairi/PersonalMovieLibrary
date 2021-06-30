@@ -1,8 +1,6 @@
 import DeleteButton from './Buttons/DeleteButton';
 import { observer } from 'mobx-react';
-import movielibrary from './MovieLibrary';
 import WatchedButton from './Buttons/WatchedButton';
-import movies from './Movies';
 import MovieItem from './MovieItem';
 
 const MovieList = (props) => {
